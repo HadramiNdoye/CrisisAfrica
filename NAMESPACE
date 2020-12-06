@@ -1,1 +1,4 @@
 exportPattern("^[[:alpha:]]+")
+importFrom("graphics", "pairs")
+importFrom("stats", "cor")
+importFrom("utils", "head", "read.csv")
