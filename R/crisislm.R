@@ -1,3 +1,11 @@
+#' Title linear_Model
+#'
+#' @param data1: is a data.frame
+#'
+#' @return
+#' @export
+#'
+#' @examples
 crisislm <- function(data1){
   a <- data1$systemic_crisis
   b <- data1$exch_usd
