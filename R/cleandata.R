@@ -12,3 +12,4 @@ cleandata <- function(data){
   data$banking_crisis <- as.numeric(data$banking_crisis)
   return(data)
 }
+
