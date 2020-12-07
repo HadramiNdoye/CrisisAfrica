@@ -5,5 +5,5 @@
 #'
 #' @examples
 loaddata <- function(){
-  data<-read.csv(file="african_crises(1).csv",header = TRUE)
+  data<-read.csv(file="african_crises.csv",header = TRUE)
 }
