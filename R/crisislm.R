@@ -6,35 +6,44 @@
 #' @export
 #'
 #' @examples
-crisislm <- function(data1){
-  a <- data1$systemic_crisis
-  b <- data1$exch_usd
-  c <- data1$domestic_debt_in_default
-  d <- data1$sovereign_external_debt_default
-  e <- data1$gdp_weighted_default
-  f <- data1$inflation_annual_cpi
-  g <- data1$independence
-  h <- data1$currency_crises
-  i <- data1$inflation_crises
-  j <- data1$banking_crisis
+crisislm <- function(data){
+
+  systemic_crisis <- data$systemic_crisis
+  exch_usd <- data$exch_usd
+  domestic_debt_in_default <- data$domestic_debt_in_default
+  sovereign_external_debt_default <- data$sovereign_external_debt_default
+  gdp_weighted_default <- data$gdp_weighted_default
+  inflation_annual_cpi <- data$inflation_annual_cpi
+  independence <- data$independence
+  currency_crises <- data$currency_crises
+  inflation_crises <- data$inflation_crises
+  banking_crisis <- data$banking_crisis
 
   # matrice de scatter plot
-  scartter <- pairs(data.frame(a, b, c, d, e, f, g, h, i, j), pch = 1,
-                    lower.panel=panel.smooth,
-                    col = "blue", main = "Matrice de Scatter plot")
+  scartter <- graphics::pairs(data.frame(systemic_crisis, exch_usd, domestic_debt_in_default,
+                                         sovereign_external_debt_default, gdp_weighted_default,
+                                         inflation_annual_cpi, independence,
+                                         currency_crises, inflation_crises,
+                                         banking_crisis), pch = 1, lower.panel=panel.smooth,
+                              col = "blue", main = "Matrice de Scatter plot")
   # Regression lineaire
-  ml <- lm(a~b+c+d+e+f+g+h+i+j,data1)
+  ml <- stats::lm(systemic_crisis~exch_usd+domestic_debt_in_default+sovereign_external_debt_default
+                  +gdp_weighted_default+inflation_annual_cpi+independence+
+                    currency_crises+inflation_crises+banking_crisis, data)
 
   # test sur les paramètres
-  resum <- summary(ml)
+  resum <- base::summary(ml)
   # analyse des variances
-  anov <- anova(ml)
+  anov <- stats::anova(ml)
 
   # Sélection des variables : pas à pas de façon automatique :
-  selec <-  stepAIC(lm(a~1, data1),a~b+c+d+e+f+g+h+i+j, direction="both")
-
-  return(list(scatterplot = scartter, regression_lineaire = ml, resume = resum,
-              anova = anov, selection_variable = selec))
+  selec <-  MASS::stepAIC(lm(systemic_crisis~1, data),systemic_crisis~exch_usd+
+                            domestic_debt_in_default+sovereign_external_debt_default+
+                            gdp_weighted_default+inflation_annual_cpi+independence+
+                            currency_crises+inflation_crises+banking_crisis, direction="both")
+  sortie <- base::list(scatterplot = scartter, regression_lineaire = ml, resume = resum,
+                       anova = anov, selection_variable = selec)
+  return(sortie)
 
 
 }
