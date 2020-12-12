@@ -10,7 +10,7 @@ Visualisation(d1)
 \item{d1}{: data.frame}
 }
 \value{
-g1,w1,w2,w3,q1: plots
+g1,g2,g3,w1,w2,w3,q1: plots
 }
 \description{
 Title Visualisation

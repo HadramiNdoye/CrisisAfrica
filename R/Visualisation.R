@@ -2,7 +2,7 @@
 #'
 #' @param d1 : data.frame
 #'
-#' @return g1,w1,w2,w3,q1: plots
+#' @return g1,g2,g3,w1,w2,w3,q1: plots
 #' @export
 #'
 #' @examples

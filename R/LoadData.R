@@ -4,6 +4,6 @@
 #' @export
 #'
 #' @examples
-loaddata <- function(){
+LoadData <- function(){
   data<-read.csv(file="african_crises.csv",header = TRUE)
 }

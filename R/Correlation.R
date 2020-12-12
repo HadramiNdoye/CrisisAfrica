@@ -1,13 +1,12 @@
 #' Title correlation
 #'
-#' @param data:data.frame
+#' @param data: is a data.frame
 #'
-#' @return p: scatterplot
-#'        c: corrplot
+#' @return c: corrplot
 #' @export
 #'
 #' @examples
-correlation <- function(data){
+Correlation <- function(data){
   dtfc <- data[4:14]
   corr <- cor(dtfc,method="pearson")
   c <- corrplot(corr, type="upper", order="hclust", tl.col="black", tl.srt=45)

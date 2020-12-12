@@ -2,11 +2,11 @@
 #'
 #' @param data1: is a data.frame
 #'
-#' @return
+#' @return list(scaterrplot,lm,summary,anova,stepAIC)
 #' @export
 #'
 #' @examples
-crisislm <- function(data){
+RegressionLineaire <- function(data){
 
   systemic_crisis <- data$systemic_crisis
   exch_usd <- data$exch_usd
