@@ -9,6 +9,6 @@
 #' @examples
 ReadData <- function(data){
   lire_data <- head(data)
-  s <- summary(data)
+   s <- summary(data)
   return(list(lire_data,s))
 }
