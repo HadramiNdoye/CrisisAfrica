@@ -7,7 +7,7 @@
 RegressionLineaire(data)
 }
 \arguments{
-\item{data1:}{is a data.frame}
+\item{data:}{is a data.frame}
 }
 \value{
 list(scaterrplot,lm,summary,anova,stepAIC)

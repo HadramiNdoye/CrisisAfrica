@@ -1,6 +1,6 @@
 #' Title linear_Model
 #'
-#' @param data1: is a data.frame
+#' @param data: is a data.frame
 #'
 #' @return list(scaterrplot,lm,summary,anova,stepAIC)
 #' @export
