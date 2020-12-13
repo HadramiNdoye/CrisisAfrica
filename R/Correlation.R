@@ -13,4 +13,5 @@ Correlation <- function(data){
                 title="Matrice de corrélation (corrélogramme)", mar=c(0,0,5,0),
                 tl.offset = 1)
   return(c)
+
 }
