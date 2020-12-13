@@ -7,7 +7,7 @@
 Correlation(data)
 }
 \arguments{
-\item{data:}{is a data.frame}
+\item{data:}{is a data frame}
 }
 \value{
 c: corrplot

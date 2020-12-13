@@ -1,6 +1,6 @@
 #' Title correlation
 #'
-#' @param data: is a data.frame
+#' @param data: is a data frame
 #'
 #' @return c: corrplot
 #' @export
